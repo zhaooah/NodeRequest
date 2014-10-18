@@ -13,13 +13,15 @@ app.set('view options', { layout: false });
 
 app.post('/sms', function(req, res) {
 
-  var msg = req.body.Body;
-  var from = req.body.From;
-  console.log('From: ' + from + ', Message: ' + msg);
-  res.render('displaysms.jade', { 
-            msg:msg,
-            from:from
-  });
+ // var msg = req.body.Body;
+ //var from = req.body.From;
+  
+console.log(req.body);
+  //console.log('From: ' + from + ', Message: ' + msg);
+  //res.render('displaysms.jade', { 
+    //        msg:msg,
+     //       from:from
+  //});
 });
 
 
