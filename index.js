@@ -55,16 +55,18 @@ app.post('/sms', function(req, res) {
 		//var msg = req.body;
  		//var from = req.body.From;	
 
+
+		iswitch = new Switch({
+	    switchType:'on';
+
+	    iswitch.save();
+
+	 });
+
+
 		console.log(req.param('Body'));
 		console.log(req.body);
 		console.log(res);
-
-		//iswitch = new Switch({
-	    //switchMsg:req;
-
-	   // iswitch.save();
-
-	//  });
   
 
 });
