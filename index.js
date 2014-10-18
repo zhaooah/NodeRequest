@@ -21,7 +21,6 @@ var server = http.createServer(app);
 
 
 
-mongoose.connect('mongodb://heroku_app30804062:heroku_app30804062@ds045970.mongolab.com:45970/heroku_app30804062');
 
 
 
@@ -43,6 +42,7 @@ app.post('/sms', function(req, res) {
 
 });
 
+mongoose.connect('mongodb://heroku_app30064365:d0unhulra37196o0ljv5md5t97@ds039850.mongolab.com:39850/heroku_app30064365');
 
 server.listen(app.get('port'), function() {
     console.log('Start server!');
