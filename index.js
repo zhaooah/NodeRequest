@@ -39,16 +39,33 @@ app.post('/', function(req, res) {
   res.render('index.jade', { 
   });
 });
+ 
 
 
 
+app.post('/sms', function(req, res) {
 
-app.post('/turnSwitch', function(req, res) {
+
+	 var msg = req.body.Body;
+ 		var from = req.body.From;	
 
 
-	Switch.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, post) {
-  console.log( post );
-});
+
+	//Switch.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, switchItem) {
+  		
+		//if (!switchItem.off){
+
+			//Post request to say it is error
+
+		//}
+		//else{
+
+			//Do what people do
+		//}
+
+
+//  		console.log( post );
+//});
 
  // var msg = req.body.Body;
  //var from = req.body.From;
