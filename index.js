@@ -13,6 +13,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.set('view options', { layout: false });
 app.use(express.static(__dirname + '/public'));
+//app.use(express.bodyParser());
 app.use("/public",express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,23 +51,24 @@ app.post('/shinto', function(req, res) {
 
 
 
-app.post('/sms', function(req, res) {
+app.get('/sms', function(req, res) {
 
 		//var msg = req.body;
  		//var from = req.body.From;	
 
 
-		iswitch = new Switch({
-	    switchType:'on';
+//		iswitch = new Switch({
+//	    switchType:;
 
-	    iswitch.save();
+//	    iswitch.save();
 
-	 });
+//	 });
 
 
-		console.log(req.param('Body'));
-		console.log(req.body);
-		console.log(res);
+		console.log(req.query.Body);
+//		console.log(req.body);
+//		console.log(res);
+        res.send('<Response></Response>');
   
 
 });
