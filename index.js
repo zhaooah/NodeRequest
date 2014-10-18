@@ -31,11 +31,13 @@ app.get('/', function(req, res) {
 });
  
 
-app.post('/shinto', function(req, res) {
+app.get('/shinto', function(req, res) {
 
 		//var msg = req.body;
- 		//var from = req.body.From;	
-		console.log(req.body);
+ 		//var from = req.body.From;
+
+ 			
+		console.log(req.query.Body);
 
 
 		//iswitch = new Switch({
@@ -53,22 +55,15 @@ app.post('/shinto', function(req, res) {
 
 app.get('/sms', function(req, res) {
 
-		//var msg = req.body;
- 		//var from = req.body.From;	
+	iswitch = new Switch({
+	
+	switchType: req.query.Body});
 
+    iswitch.save();
 
-//		iswitch = new Switch({
-//	    switchType:;
+	//	console.log(req.query.Body);
 
-//	    iswitch.save();
-
-//	 });
-
-
-		console.log(req.query.Body);
-//		console.log(req.body);
-//		console.log(res);
-        res.send('<Response></Response>');
+    res.send('<Response></Response>');
   
 
 });
