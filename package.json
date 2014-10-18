@@ -1,7 +1,8 @@
 { "dependencies" :
   { "twilio" : "*",
   "express" : "*",
-    "jade" : "*"
+    "jade" : "*",
+    "mongoose" : "*"
 
   }
 }

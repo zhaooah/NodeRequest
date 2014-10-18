@@ -6,9 +6,9 @@ var id = mongoose.Types.ObjectId();
 
 
 var Switch = new Schema({
-    _id: Number,
-    on: { type: Date, default: Date.now },
-    off: { type: Date, default: Date.now }
+    id: ObjectId,
+    switchOn: { type: Date, default: Date.now },
+    switchOff: { type: Date, default: Date.now }
 });
 
 
