@@ -1,0 +1,10 @@
+{ "dependencies" :
+  { "twilio" : "*",
+  "express" : "*"
+  "ejs": "*",
+  "moment": "*",
+  "angular": "*",
+  "less-middleware": "*",
+   "browserify": "*"
+  }
+}
