@@ -15,7 +15,7 @@ app.post('/sms', function(req, res) {
 
   var msg = req.body.Body;
   var from = req.body.From;
-  sys.log('From: ' + from + ', Message: ' + msg);
+  console.log('From: ' + from + ', Message: ' + msg);
   res.render('displaysms.jade', { 
             msg:msg,
             from:from
