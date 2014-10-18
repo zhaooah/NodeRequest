@@ -1,25 +1,28 @@
-var twilio = require('twilio'),
-    express = require('express');
-    
-// Create an express web app
+var http = require('http'),
+    path = require('path'),
+    express = require('express')
+
 var app = express();
 
-// Use middleware to parse incoming form bodies
-app.use(express.urlencoded());
+var server = http.createServer(app);
 
-// Create a webhook that handles an incoming SMS
-app.post('/sms', function(request, response) {
-    // Create a TwiML response
-    var twiml = new twilio.TwimlResponse();
-    twiml.message('Hello from node.js!');
-    
-    // Render the TwiML response as XML
-    response.type('text/xml');
-    response.send(twiml.toString());
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.set('view options', { layout: false });
+
+app.post('/sms', function(req, res) {
+
+  var msg = req.body.Body;
+  var from = req.body.From;
+  sys.log('From: ' + from + ', Message: ' + msg);
+  res.render('displaysms.jade', { 
+            msg:msg,
+            from:from
+  });
 });
 
-// Have express create an HTTP server that will listen on port 3000
-// or "process.env.PORT", if defined
-app.listen(process.env.PORT || 3000);
 
-
+server.listen(app.get('port'), function() {
+    console.log('Start server!');
+});
