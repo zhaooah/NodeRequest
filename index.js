@@ -34,11 +34,11 @@ app.post('/', function(req, res) {
 
 app.post('/sms', function(req, res) {
 
-		var msg = req.body.Body;
- 		var from = req.body.From;	
+		//var msg = req.body;
+ 		//var from = req.body.From;	
 
   
-		system.log(req.msg);
+		system.log(req.body);
 
 });
 
