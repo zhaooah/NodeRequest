@@ -38,7 +38,7 @@ app.post('/sms', function(req, res) {
  		//var from = req.body.From;	
 
   
-		system.log(req.body);
+		console.log(req.body);
 
 });
 
