@@ -3,6 +3,5 @@
   "express" : "*",
     "jade" : "*",
     "mongoose" : "*"
-
   }
 }

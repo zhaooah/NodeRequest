@@ -21,14 +21,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 var server = http.createServer(app);
 
 
-
-
-
-
 app.get('/', function(req, res) {
+
+ Switch.find({}, function (err, docs) {
+//    console.log(docs);
+
   res.render('index.jade', { 
+    switches: docs
   });
+
+
+})
+
 });
+
+
+
  
 
 app.get('/shinto', function(req, res) {
@@ -36,7 +44,7 @@ app.get('/shinto', function(req, res) {
 		//var msg = req.body;
  		//var from = req.body.From;
 
- 			
+ 	//	if(typeof query !== 'undefined' && query !== null)
 		console.log(req.query.Body);
 
 
@@ -44,6 +52,7 @@ app.get('/shinto', function(req, res) {
 	    //switchMsg:req;
 
 	   // iswitch.save();
+    res.send('Message received!');
 
 	//  });
   
@@ -69,6 +78,12 @@ app.get('/sms', function(req, res) {
 });
 
 mongoose.connect('mongodb://heroku_app30064365:d0unhulra37196o0ljv5md5t97@ds039850.mongolab.com:39850/heroku_app30064365');
+
+
+
+
+
+
 
 server.listen(app.get('port'), function() {
     console.log('Start server!');
